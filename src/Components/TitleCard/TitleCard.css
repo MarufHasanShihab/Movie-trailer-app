@@ -16,9 +16,13 @@
 }
 
 .card-list img{
-    width: 210px;
+    width: 200px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.card-list .sm_img{
+    width: 130px;
 }
 
 .card-list .card{
