@@ -2,6 +2,7 @@ import "./TitleCard.css";
 import cards_data from "../../assets/cards/Cards_data";
 import { useRef } from "react";
 import { useEffect } from "react";
+import PropTypes from "prop-types"
 
 const TitleCard = ({title, category}) => {
   const cardsRef = useRef();
@@ -26,5 +27,11 @@ const TitleCard = ({title, category}) => {
     </div>
   );
 };
+
+TitleCard.propTypes ={
+    title: PropTypes.string,
+    category: PropTypes.string
+}
+
 
 export default TitleCard;
