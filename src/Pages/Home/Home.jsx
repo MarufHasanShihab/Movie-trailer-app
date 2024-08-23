@@ -15,7 +15,7 @@ const Home = () => {
         <img src={hero_banner} alt="banner_img" className="banner-img" />
         <div className="hero-caption">
           <img src={hero_title} alt="caption_img" className="caption-img" />
-          <p>
+          <p className="hero-description">
             Discovering his ties to a secret ancient order, a youing man living
             in modern Istanbul embarks on a quest to save the city from an
             immortal enemy.
@@ -30,7 +30,9 @@ const Home = () => {
               More Info
             </button>
           </div>
+          <div className="title-cards">
           <TitleCard/>
+          </div>
         </div>
       </div>
       <div className="more-cards">

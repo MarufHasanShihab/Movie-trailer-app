@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { login, signUp } from "../../firebase/firebase";
 import { toast } from "react-toastify";
+import netflix_spinner from "../../assets/netflix_spinner.gif"
 const Login = () => {
     const [signState, setSignState] = useState("Sign In");
+    const [loading, setLoading] = useState(false)
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const use_auth = async(e)=>{
         e.preventDefault()
+        setLoading(true)
         if(signState === "Sign In"){
             login(email, password)
         }else{
@@ -21,9 +24,13 @@ const Login = () => {
             }
             signUp(name, email, password)
         }
+        setLoading(false)
     }
     return (
-        <div className="login">
+            loading ? <div className="loading-spinner">
+                <img src={netflix_spinner} alt="" />
+            </div> :
+            <div className="login">
             <Link to="/"><img src={login_logo} alt="" className="login-logo" /></Link>
             <div className="login-form">
                 <h1>{signState}</h1>
